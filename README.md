@@ -1,210 +1,296 @@
-🎧 AI AudioBook Generator
+[![Python Version](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-UI-red?logo=streamlit&logoColor=white)
+[![Gemini-LLM](https://img.shields.io/badge/Gemini-LLM-yellow?logo=google&logoColor=white)
+[![Coqui TTS](https://img.shields.io/badge/Coqui-TTS-green?logo=coqui&logoColor=white)
+[![Python Version](https://img.shields.io/badge/License-MIT-green)
 
-The **AI AudioBook Generator** is an advanced application that transforms text documents into expressive, human-like audiobooks.  
-It extracts text from various file formats, rewrites it in a storytelling style using **Gemini LLM**, and converts it into natural speech using **Coqui TTS** or **pyttsx3**.
+The AI AudioBook Generator is an advanced application that transforms text documents into expressive, human-like audiobooks. It extracts text from various file formats, rewrites it in a storytelling style using Gemini LLM, and converts it into natural speech using Coqui TTS or pyttsx3.
 
-This updated version includes secure API handling using a **.env** file and a centralized configuration system via **config.py**.
+✨ Features
+📄 Multi-Format Support: Upload PDF, DOCX, and TXT documents
 
----
+🤖 AI-Powered Narration: Gemini LLM enhances text into audiobook-style narration
 
-## 🚀 Project Overview
+🎙️ Natural Speech Generation: Coqui TTS for high-quality voice synthesis
 
-This system provides a fast and accessible way for users to consume text content through audio.  
-It is particularly beneficial for:
+📴 Offline Capability: pyttsx3 fallback for offline usage
 
-- Students  
-- Professionals  
-- Visually impaired users  
-- Content creators  
-- People who prefer listening over reading  
+🔒 Secure Configuration: Environment-based API key management
 
-**Workflow:**  
-`Upload Document → Extract Text → Enrich Narration Using AI → Convert to Speech → Download Audiobook`
+🎨 User-Friendly UI: Clean, interactive Streamlit interface
 
----
+⚙️ Centralized Configuration: Easy settings management via config.py
 
-## 🧩 Features
+🎯 Target Audience
+Students for learning on the go
 
-- Upload PDF / DOCX / TXT documents  
-- Automatic text extraction  
-- Gemini AI-based audiobook-style narration enhancement  
-- Natural speech generation with Coqui TTS  
-- Offline TTS fallback via pyttsx3  
-- Clean, interactive Streamlit UI  
-- Secure API key storage using `.env`  
-- Centralized configuration via `config.py`
+Professionals for consuming reports and documents
 
----
+Visually impaired users for accessible content
 
-## 🏗 System Architecture
+Content creators for repurposing written content
 
+Anyone who prefers listening over reading
+
+🏗️ System Architecture
+text
 AI-AudioBook-Generator/
 │
-├── app.py # Streamlit user interface
-├── config.py # Loads .env and manages global settings
-├── llm_enrichment.py # Gemini AI narration enhancement
-├── text_extraction.py # PDF/DOCX/TXT text extraction
-├── tts_generator.py # Coqui TTS + pyttsx3 audio generation
-├── requirements.txt # Python dependencies
-└── README.md # Project documentation
+├── app.py                    # Streamlit user interface
+├── config.py                 # Loads .env and manages global settings
+├── llm_enrichment.py         # Gemini AI narration enhancement
+├── text_extraction.py        # PDF/DOCX/TXT text extraction
+├── tts_generator.py          # Coqui TTS + pyttsx3 audio generation
+├── requirements.txt          # Python dependencies
+├── .env.example              # Environment variables template
+└── README.md                 # Project documentation
+📋 Prerequisites
+Python 3.11 or higher
 
-yaml
-Copy code
+Git
 
----
+Internet connection (for Gemini API and Coqui TTS)
 
-## 🔐 Environment Setup (.env)
+API keys for Gemini AI
 
-Create a `.env` file in your project root:
-
-GEMINI_API_KEY=your_gemini_api_key_here
-OPENAI_API_KEY=your_openai_api_key_here
-
-TTS_ENGINE=coqui
-TTS_OUTPUT_FORMAT=wav
-
-DEBUG_MODE=False
-
-yaml
-Copy code
-
-> ⚠️ Ensure `.env` is added to `.gitignore` to keep keys secure.
-
----
-
-## 📦 Installation
-
-### 1️⃣ Clone the Repository
-```bash
+🚀 Quick Installation
+1️⃣ Clone the Repository
+bash
 git clone https://github.com/yourusername/AI-AudioBook-Generator.git
 cd AI-AudioBook-Generator
-2️⃣ Create & Activate Virtual Environment
+2️⃣ Create Virtual Environment
 bash
-Copy code
-python -m venv env
-source env/bin/activate       # macOS/Linux
-env\Scripts\activate          # Windows
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+# macOS/Linux
+python -m venv venv
+source venv/bin/activate
 3️⃣ Install Dependencies
 bash
-Copy code
 pip install -r requirements.txt
-4️⃣ Install System Dependencies
-Windows
+4️⃣ System Dependencies
+Windows:
+
 Install eSpeak NG
 
 Add it to PATH
 
 Restart terminal
 
-Ubuntu / Linux
+Ubuntu/Linux:
+
 bash
-Copy code
 sudo apt update
 sudo apt install espeak-ng
-macOS
+macOS:
+
 bash
-Copy code
 brew install espeak
-🔑 API Configuration
-Generate your Gemini API key at:
-https://makersuite.google.com/app/apikey
+🔐 Configuration
+1. Get API Keys
+Visit Google AI Studio
 
-Set it inside your .env file.
+Generate a Gemini API key
 
-The project automatically loads API keys using:
+(Optional) Get OpenAI API key if needed
 
-python
-Copy code
-from config import GEMINI_API_KEY
-🖥 Usage
-Run the application:
+2. Configure Environment
+Create a .env file in the project root:
+
+env
+# API Keys
+GEMINI_API_KEY=your_gemini_api_key_here
+OPENAI_API_KEY=your_openai_api_key_here
+
+# TTS Configuration
+TTS_ENGINE=coqui
+TTS_OUTPUT_FORMAT=wav
+
+# Application Settings
+DEBUG_MODE=False
+⚠️ Important: Add .env to .gitignore to keep your keys secure!
+
+🖥️ Usage
+Start the Application
 bash
-Copy code
 streamlit run app.py
-Inside the UI:
-Upload a document (PDF/DOCX/TXT)
+Using the Web Interface
+Upload Document: Drag and drop or select a PDF, DOCX, or TXT file
 
-Preview extracted text
+Preview Text: Review the extracted text before processing
 
-Click "Generate Audiobook"
+Generate Audiobook: Click the "Generate Audiobook" button
 
-Listen or download the audio file
+Listen/Download: Play the audio directly or download the generated file
 
-🧠 How It Works (Detailed)
+Workflow
+text
+Upload Document → Extract Text → AI Narration Enhancement → Convert to Speech → Download Audiobook
+🧠 How It Works
 1. Text Extraction
-PyPDF2 & pdfplumber for PDFs
+PDF: Uses PyPDF2 & pdfplumber for accurate text extraction
 
-python-docx for DOCX
+DOCX: Leverages python-docx for Word document parsing
 
-Direct reading for TXT
+TXT: Direct file reading with encoding detection
 
-2. LLM Narration Enhancement
-Gemini rewrites the text into audiobook-style narration
+2. AI Narration Enhancement
+Gemini LLM rewrites text into audiobook-style narration
 
-Chunking prevents token overflow
+Intelligent chunking prevents token overflow
 
-Final enriched text is smoother and more expressive
+Adds expressive elements for better listening experience
 
 3. Text-to-Speech Generation
-Coqui TTS (primary engine)
+Primary: Coqui TTS for natural, human-like speech
 
-pyttsx3 (offline fallback)
+Fallback: pyttsx3 for offline functionality
 
-Output format controlled via .env
+Configurable output formats (WAV, MP3)
 
-4. Streamlit UI
-Handles uploads, previews, progress, playback, and downloads
+4. User Interface
+Streamlit-based interactive UI
+
+Real-time progress tracking
+
+Audio playback and download options
 
 🧪 Testing
 Unit Testing
-Verified extraction, rewriting, and audio synthesis independently
+bash
+python -m pytest tests/
+Test Coverage
+✅ Text extraction from all supported formats
 
-Integration Testing
-Ensured all modules work together in sequence smoothly
+✅ LLM narration enhancement
 
-Performance Testing
-Measured audio generation time for different document sizes
+✅ Audio synthesis with both TTS engines
 
-Fallback Testing
-Verified pyttsx3 activates when Coqui fails
+✅ Error handling and fallback mechanisms
 
 🚀 Deployment Options
-Streamlit Cloud
+Option 1: Streamlit Cloud
+Push code to GitHub
 
-Hugging Face Spaces
+Connect to Streamlit Cloud
 
-Docker Containers
+Add environment variables in settings
 
-Local/On-premise deployment
+Option 2: Hugging Face Spaces
+Create new Space
 
-Add environment variables in deployment settings for .env compatibility.
+Select Streamlit SDK
 
+Upload code and configure secrets
 
-## 🧰 Tech Stack
+Option 3: Docker
+bash
+# Build Docker image
+docker build -t audiobook-generator .
 
-| Category               | Technology                  |
-|------------------------|----------------------------|
-| Programming Language   | ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white) |
-| UI Framework           | ![Streamlit](https://img.shields.io/badge/Streamlit-UI-red?logo=streamlit&logoColor=white) |
-| Narration Enhancement  | ![Gemini AI](https://img.shields.io/badge/Gemini-LLM-yellow?logo=google&logoColor=white) |
-| Speech Synthesis       | ![Coqui TTS](https://img.shields.io/badge/Coqui-TTS-green?logo=coqui&logoColor=white) <br> ![pyttsx3](https://img.shields.io/badge/pyttsx3-offline-lightgrey) |
-| Text Extraction        | ![PyPDF2](https://img.shields.io/badge/PyPDF2-pdfplumber-lightblue) <br> ![python-docx](https://img.shields.io/badge/python--docx-documents-blue) |
-| Env Management         | ![python-dotenv](https://img.shields.io/badge/dotenv-env-green) |
-| Deployment Options     | ![Streamlit Cloud](https://img.shields.io/badge/Streamlit-Cloud-orange) <br> ![Hugging Face Spaces](https://img.shields.io/badge/HuggingFace-Spaces-yellow) <br> ![Docker](https://img.shields.io/badge/Docker-container-blue) |
+# Run container
+docker run -p 8501:8501 audiobook-generator
+Option 4: Local Deployment
+bash
+# Run as background service
+nohup streamlit run app.py --server.port 8501 &
+🧰 Tech Stack
+Category	Technology
+Programming Language	Python 3.11
+UI Framework	Streamlit
+AI/ML	Google Gemini LLM
+Speech Synthesis	Coqui TTS, pyttsx3
+Text Extraction	PyPDF2, pdfplumber, python-docx
+Configuration	python-dotenv
+Document Parsing	PyMuPDF, docx2txt
+🔧 Troubleshooting
+Common Issues
+API Key Errors
 
-🧩 Future Enhancements
-Multi-voice selection
+Verify .env file exists and contains correct keys
 
-Multi-language audiobook generation
+Check API key validity at Google AI Studio
 
-Background music mixing
+TTS Engine Issues
 
-Chapter-wise audio segmentation
+Ensure eSpeak NG is properly installed
 
-Cloud deployment with user authentication
+Check internet connection for Coqui TTS
+
+Memory Issues
+
+Reduce chunk size in config.py for large documents
+
+Close other applications to free up memory
+
+Logs
+Enable debug mode in .env for detailed logging:
+
+env
+DEBUG_MODE=True
+📈 Performance Metrics
+Document Size	Processing Time	Audio Duration
+1-10 pages	1-2 minutes	5-15 minutes
+10-50 pages	3-5 minutes	15-60 minutes
+50+ pages	5-10+ minutes	60+ minutes
+🔮 Future Enhancements
+🎭 Multi-voice selection for different characters
+
+🌍 Multi-language support for global accessibility
+
+🎵 Background music mixing options
+
+📖 Chapter-wise audio segmentation
+
+☁️ Cloud storage integration for saving audiobooks
+
+👥 User authentication and library management
+
+📱 Mobile app development
+
+🔍 OCR support for scanned documents
+
+🤝 Contributing
+We welcome contributions! Here's how you can help:
+
+Fork the repository
+
+Create a feature branch (git checkout -b feature/AmazingFeature)
+
+Commit your changes (git commit -m 'Add some AmazingFeature')
+
+Push to the branch (git push origin feature/AmazingFeature)
+
+Open a Pull Request
+
+Development Setup
+bash
+# Install development dependencies
+pip install -r requirements-dev.txt
+
+# Run tests
+pytest
+
+# Check code style
+flake8
+📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+🙏 Acknowledgments
+Google Gemini AI
+
+Coqui TTS
+
+Streamlit
+
+All open-source libraries used in this project
 
 👨‍💻 Author
-Harsha
-AI & Machine Learning Enthusiast
-GitHub: https://github.com/Harsha-2005
-LinkedIn: https://www.linkedin.com/in/harsha-pavan-maddala/
+Harsha Pavan Maddala
+
+GitHub: @Harsha-2005
+
+LinkedIn: Harsha Pavan Maddala
+
