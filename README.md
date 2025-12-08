@@ -180,17 +180,28 @@ Local/On-premise deployment
 Add environment variables in deployment settings for .env compatibility.
 
 🧰 Tech Stack
-Python 3.11
 
-Streamlit (UI)
 
-Gemini AI (Narration enhancement)
-
-Coqui TTS / pyttsx3 (Speech synthesis)
-
-PyPDF2, pdfplumber, python-docx (Text extraction)
-
-dotenv (Environment variable management)
+> **Programming Language:**  
+> Python 3.11
+>
+> **User Interface:**  
+> Streamlit
+>
+> **AI Narration:**  
+> Gemini LLM (Google)
+>
+> **Text-to-Speech Engines:**  
+> Coqui TTS (primary), pyttsx3 (offline fallback)
+>
+> **Document Processing:**  
+> PyPDF2, pdfplumber, python-docx
+>
+> **Configuration Management:**  
+> python-dotenv, config.py
+>
+> **Deployment:**  
+> Streamlit Cloud, Hugging Face Spaces, Docker, local/on-premise
 
 🧩 Future Enhancements
 Multi-voice selection
