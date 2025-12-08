@@ -1,8 +1,10 @@
-[![Python Version](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)
-[![Streamlit App](https://img.shields.io/badge/Streamlit-UI-red?logo=streamlit&logoColor=white)
-[![Gemini-LLM](https://img.shields.io/badge/Gemini-LLM-yellow?logo=google&logoColor=white)
-[![Coqui TTS](https://img.shields.io/badge/Coqui-TTS-green?logo=coqui&logoColor=white)
-[![Python Version](https://img.shields.io/badge/License-MIT-green)
+
+
+[![Python Version](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-UI-red?logo=streamlit&logoColor=white)](https://your-app.streamlit.app/)
+[![Gemini-LLM](https://img.shields.io/badge/Gemini-LLM-yellow?logo=google&logoColor=white)](https://gemini.google.com/app?hl=en-IN)
+[![Coqui TTS](https://img.shields.io/badge/Coqui-TTS-green?logo=coqui&logoColor=white)](https://coquitts.com/)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 The AI AudioBook Generator is an advanced application that transforms text documents into expressive, human-like audiobooks. It extracts text from various file formats, rewrites it in a storytelling style using Gemini LLM, and converts it into natural speech using Coqui TTS or pyttsx3.
 
