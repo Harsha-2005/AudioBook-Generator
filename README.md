@@ -179,29 +179,18 @@ Local/On-premise deployment
 
 Add environment variables in deployment settings for .env compatibility.
 
-🧰 Tech Stack
 
+## 🧰 Tech Stack
 
-> **Programming Language:**  
-> Python 3.11
->
-> **User Interface:**  
-> Streamlit
->
-> **AI Narration:**  
-> Gemini LLM (Google)
->
-> **Text-to-Speech Engines:**  
-> Coqui TTS (primary), pyttsx3 (offline fallback)
->
-> **Document Processing:**  
-> PyPDF2, pdfplumber, python-docx
->
-> **Configuration Management:**  
-> python-dotenv, config.py
->
-> **Deployment:**  
-> Streamlit Cloud, Hugging Face Spaces, Docker, local/on-premise
+| Category               | Technology                  |
+|------------------------|----------------------------|
+| Programming Language   | ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white) |
+| UI Framework           | ![Streamlit](https://img.shields.io/badge/Streamlit-UI-red?logo=streamlit&logoColor=white) |
+| Narration Enhancement  | ![Gemini AI](https://img.shields.io/badge/Gemini-LLM-yellow?logo=google&logoColor=white) |
+| Speech Synthesis       | ![Coqui TTS](https://img.shields.io/badge/Coqui-TTS-green?logo=coqui&logoColor=white) <br> ![pyttsx3](https://img.shields.io/badge/pyttsx3-offline-lightgrey) |
+| Text Extraction        | ![PyPDF2](https://img.shields.io/badge/PyPDF2-pdfplumber-lightblue) <br> ![python-docx](https://img.shields.io/badge/python--docx-documents-blue) |
+| Env Management         | ![python-dotenv](https://img.shields.io/badge/dotenv-env-green) |
+| Deployment Options     | ![Streamlit Cloud](https://img.shields.io/badge/Streamlit-Cloud-orange) <br> ![Hugging Face Spaces](https://img.shields.io/badge/HuggingFace-Spaces-yellow) <br> ![Docker](https://img.shields.io/badge/Docker-container-blue) |
 
 🧩 Future Enhancements
 Multi-voice selection
